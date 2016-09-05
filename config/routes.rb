@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+	resources :books, :only => [:index, :show]
+
+
   get "static_pages/about"
-  
-  root "static_pages#home"
+  root "books#index"
+
 end
