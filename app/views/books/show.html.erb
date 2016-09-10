@@ -7,6 +7,15 @@
 		<h1><%= @book.title %></h1>
 		<h2><%= @book.author %></h2>
 		<p><%= @book.description %></p>
-		<p><%= @book.verdict %></p>
+	<div class="row">
+		<div class="col-md-2">
+			<p><%= @book.rating %></p>
+		</div>
+
+		<div class="col-md-6">
+			<p><%= @book.verdict %></p>
+		</div>
+	</div>
 	</div>
 </div>
+
