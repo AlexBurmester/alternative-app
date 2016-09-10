@@ -15,5 +15,10 @@ social_books = [
 ]
 
 social_books.each do |title, author, description|
-	Book.create(title: title, author: author, description: description)
+	Book.create(
+		title: title, 
+		author: author, 
+		description: description, 
+		book_img: File.open(File.join(Dir.home, "Pictures", "alternative_images", "#{title}.jpg"))
+		)
 end

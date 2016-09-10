@@ -1,4 +1,12 @@
-<h1><%= @book.title %></h1>
-<h2><%= @book.author %></h2>
-<p><%= @book.description %></p>
-<p><%= @book.verdict %></p>
+<div class="row">
+	<div class="col-md-4">
+		<%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
+	</div>
+	
+	<div class="col-md-8">
+		<h1><%= @book.title %></h1>
+		<h2><%= @book.author %></h2>
+		<p><%= @book.description %></p>
+		<p><%= @book.verdict %></p>
+	</div>
+</div>
