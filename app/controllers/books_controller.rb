@@ -1,11 +1,23 @@
 class BooksController < ApplicationController
-	before_action :find_book, only: [:show]
+	before_action :find_book, only: [:show, :edit, :update]
 
 	def index
 		@books = Book.all.order("created_at DESC")
 	end
 
 	def show
+	end
+
+	def new
+	end
+
+	def edit
+	end
+
+	def create
+	end
+
+	def update
 	end
 
 	private
