@@ -1,29 +1,40 @@
 <div class="row">
+
 	<div class="col-md-4">
 		<%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
 	</div>
 	
 	<div class="col-md-8">
+
 		<h1><%= @book.title %></h1>
 		<h2><%= @book.author %></h2>
 		<p><%= @book.description %></p>
-	<div class="row">
+
+
+		<h3>Vurdering:</h3>
+
 		<div class="col-md-2">
-			<p><%= @book.rating %></p>
+			<% if @book.rating == 1 %>
+				<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
+			<% elsif @book.rating == 3 %>
+				<p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></p>
+			<% else %>
+				<p><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></p>
+			<% end %>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-10">
 			<% unless @book.verdict.blank? %>
-			<h3>Vurdering</h3>
 			<p><%= @book.verdict %></p>
 			<% end %>
 		</div>
-	</div>
 
-	<ul>
-  	<li><%= link_to "Rediger bog", edit_book_path(@book) %></li>
-  	<li><%= link_to "Slet bog", book_path(@book), method: :delete, data: { confirm: "Slet bogen?"} %></li>
-  </ul>
+		<div class="col-md-12">
+			<%= link_to "Rediger bog", edit_book_path(@book) %>
+			</br>
+		  <%= link_to "Slet bog", book_path(@book), method: :delete, data: { confirm: "Slet bogen?"} %>
+		</div>
+
 	</div>
 </div>
 

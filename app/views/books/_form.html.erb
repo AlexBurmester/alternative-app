@@ -4,6 +4,6 @@
 	<%= f.input :author, label: "Forfatter" %>
 	<%= f.input :description, label: "Beskrivelse" %>
 	<%= f.input :verdict, label: "Bedømmelse" %>
-	<%= f.input :rating, collection: 1..3, selected: 2 %>
+	<%= f.input :rating, collection: 1..3 %>
 	<%= f.button :submit, "Gem" %>
 <% end %>
