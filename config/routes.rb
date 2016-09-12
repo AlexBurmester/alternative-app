@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
-	resources :books, :only => [:index, :show, :edit, :update, :new, :create]
+	resources :books
 
 
   get "static_pages/about"

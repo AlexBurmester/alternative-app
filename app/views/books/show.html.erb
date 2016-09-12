@@ -13,9 +13,17 @@
 		</div>
 
 		<div class="col-md-6">
+			<% unless @book.verdict.blank? %>
+			<h3>Vurdering</h3>
 			<p><%= @book.verdict %></p>
+			<% end %>
 		</div>
 	</div>
+
+	<ul>
+  	<li><%= link_to "Rediger bog", edit_book_path(@book) %></li>
+  	<li><%= link_to "Slet bog", book_path(@book), method: :delete, data: { confirm: "Slet bogen?"} %></li>
+  </ul>
 	</div>
 </div>
 
