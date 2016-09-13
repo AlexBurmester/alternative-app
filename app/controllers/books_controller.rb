@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 	before_action :find_book, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@books = Book.all.order("created_at DESC")
+		@books = Book.all.order("rating DESC")
 		@good_books = Book.where("rating = '3'")
 		@bad_books = Book.where("rating = '1'")
 		@new_books = Book.where("rating IS NULL")
