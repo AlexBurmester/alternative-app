@@ -1,13 +1,49 @@
 <div class="row">
-	<% @books.each do |book| %>
-			<div class="col-md-3">
 
+	<div class="col-md-4">
+	<div class="panel panel-success">
+	<div class="panel-heading">De Gode</div>
+		<ul class="list-group">
+		<% @good_books.each do |book| %>
+				
+						<a href="/books/<%= book.id %>" class="list-group-item">
+							<%= book.title %>
+						</a>
 
-					<a href="/books/<%= book.id %>">
-						<%= image_tag book.book_img.url(:book_index), class: "book" %>
-					</a>
+		<% end %>
+		</ul>
+		</div>
+	</div>
 
-			</div>
-	<% end %>
+	<div class="col-md-4">
+	<div class="panel panel-warning">
+	<div class="panel-heading">De Middelmådige</div>
+		<ul class="list-group">
+		<% @new_books.each do |book| %>
+				
+						<a href="/books/<%= book.id %>" class="list-group-item">
+							<%= book.title %>
+						</a>
+
+		<% end %>
+		</ul>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+	<div class="panel panel-danger">
+	<div class="panel-heading">De Dårlige</div>
+		<ul class="list-group">
+		<% @bad_books.each do |book| %>
+				
+						<a href="/books/<%= book.id %>" class="list-group-item">
+							<%= book.title %>
+						</a>
+
+		<% end %>
+		</ul>
+		</div>
+	</div>
+
 </div>
 

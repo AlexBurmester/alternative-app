@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
 	def index
 		@books = Book.all.order("rating DESC")
-		@good_books = Book.where("rating = '3'")
+		@good_books = Book.where("rating = '2'")
 		@bad_books = Book.where("rating = '1'")
 		@new_books = Book.where("rating IS NULL")
 	end
