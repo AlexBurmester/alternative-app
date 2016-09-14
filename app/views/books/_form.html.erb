@@ -1,9 +1,17 @@
 <%= simple_form_for @book do |f| %>
+	<div class="form-group string optional book_title">
+	<label class="control-label string optional" >Billede</label>
 	<%= f.file_field :book_img %>
+	</div>
+
+	<%= select_tag(:semester_id, options_for_select(@semesters), :prompt => "Semester") %>
+
 	<%= f.input :title, label: "Titel" %>
 	<%= f.input :author, label: "Forfatter" %>
 	<%= f.input :description, label: "Beskrivelse" %>
 	<%= f.input :verdict, label: "Bedømmelse" %>
-	<%= f.input :rating, collection: 1..2 %>
+
+	<%= select_tag(:rating, options_for_select([["Ja", 2], ["Nej", 1], ["Jeg er ikke sikker", 0]]), :prompt => "Er bogen nødvendig for at klare semestret?") %>
+
 	<%= f.button :submit, "Gem" %>
 <% end %>

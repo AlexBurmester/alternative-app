@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911214409) do
+ActiveRecord::Schema.define(version: 20160914141057) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 20160911214409) do
     t.integer  "book_img_file_size"
     t.datetime "book_img_updated_at"
     t.integer  "rating"
+    t.integer  "semester_id"
+  end
+
+  create_table "semesters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

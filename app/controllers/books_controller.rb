@@ -13,10 +13,13 @@ class BooksController < ApplicationController
 
 	def new
 		@book = Book.new
+		@semesters = Semester.all.map { |s| [s.id, s.id] }
 	end
 
 	def create
 		@book = Book.new(book_params)
+		@book.semester_id = params[:semester_id]
+		@book.rating = params[:rating]
 
 		if @book.save
 			redirect_to book_path(@book)
@@ -43,7 +46,8 @@ class BooksController < ApplicationController
 
 		def book_params
 			params.require(:book).permit(:title, :author, :description, 
-																	 :rating, :verdict, :book_img)
+																	 :rating, :verdict, :book_img,
+																	 :semester_id)
 		end
 
 		def find_book
