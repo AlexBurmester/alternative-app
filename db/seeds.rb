@@ -19,6 +19,12 @@ social_books.each do |title, author, description|
 		title: title, 
 		author: author, 
 		description: description, 
-		book_img: File.open(File.join(Dir.home, "Pictures", "alternative_images", "#{title}.jpg"))
+		book_img: File.open(File.join(Dir.home, "Pictures", "alternative_images", "#{title}.jpg")),
+		rating: 2,
+		semester_id: 1
 		)
+end
+
+7.times do 
+	Semester.create
 end
