@@ -2,10 +2,6 @@ class BooksController < ApplicationController
 	before_action :find_book, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@books = Book.all.order("rating DESC")
-		@good_books = Book.where("rating = '2'")
-		@bad_books = Book.where("rating = '1'")
-		@new_books = Book.where("rating IS NULL")
 	end
 
 	def show
@@ -27,6 +23,7 @@ class BooksController < ApplicationController
 	end
 
 	def edit
+		@semesters = Semester.all.map { |s| [s.id, s.id] }
 	end
 
 	def update
