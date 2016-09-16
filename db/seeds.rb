@@ -14,6 +14,10 @@ social_books = [
 	["Modeller i socialt arbejde", "Siv Oltedal", "Bogen præsenterer fem centrale teorier, som danner grundlaget for forståelses- og handlingsmodeller i socialt arbejde. Forfatterne tager psykodynamiske, interaktionistiske, læringsteoretiske, konfliktteoretiske og systemteoretiske traditioner op."]
 ]
 
+7.times do 
+	Semester.create
+end
+
 social_books.each do |title, author, description|
 	Book.create(
 		title: title, 
@@ -24,6 +28,3 @@ social_books.each do |title, author, description|
 		)
 end
 
-7.times do 
-	Semester.create
-end
