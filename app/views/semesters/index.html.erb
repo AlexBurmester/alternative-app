@@ -1,0 +1,16 @@
+<div class="row">
+
+	<div class="col-md-4">
+	<div class="panel panel-info">
+	<div class="panel-heading">Vælg semester</div>
+		<ul class="list-group">
+		<% @semesters.each do |semester| %>
+				
+						<a href="/semesters/<%= semester.id %>" class="list-group-item">
+							<%= semester.id %>. semester
+						</a>
+
+		<% end %>
+		</ul>
+		</div>
+	</div>
