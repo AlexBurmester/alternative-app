@@ -18,10 +18,16 @@
       </div>
 
       <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= link_to "Log ud", destroy_user_session_path, method: :delete%></li>
+        <% else %>
+          <li><%= link_to "Log ind", user_session_path %></li>
+          <li><%= link_to "Tilmeld", new_user_registration_path %></li>
+        <% end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
+        <% if current_user.try(:admin?) %>
         <li><%= link_to "Tilføj bog", new_book_path %></li>
         <% end %>
       </ul>
