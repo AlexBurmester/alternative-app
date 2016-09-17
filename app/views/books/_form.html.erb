@@ -11,7 +11,7 @@
 	<%= f.input :description, label: "Beskrivelse" %>
 	<%= f.input :verdict, label: "Bedømmelse" %>
 
-	<%= select_tag(:rating, options_for_select([["Ja", 2], ["Nej", 1], ["Jeg er ikke sikker", 0]]), :prompt => "Er bogen nødvendig for at klare semestret?") %>
+	<%= select_tag(:rating, options_for_select([["Ja", 2], ["Nej", 1], ["Jeg er ikke sikker", nil]]), :prompt => "Er bogen nødvendig for at klare semestret?") %>
 
 	<%= f.button :submit, "Gem" %>
 <% end %>

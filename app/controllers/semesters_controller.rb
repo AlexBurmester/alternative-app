@@ -6,7 +6,6 @@ class SemestersController < ApplicationController
   end
 
   def show
-		@semester = Semester.find(params[:id])
 		@good_books = @semester.books.where("rating = '2'")
 		@bad_books = @semester.books.where("rating = '1'")
 		@new_books = @semester.books.where("rating IS NULL")

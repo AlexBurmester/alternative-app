@@ -4,7 +4,7 @@
 	<div class="panel panel-success">
 	<div class="panel-heading">De Gode</div>
 		<ul class="list-group">
-		<% @semester.books.each do |book| %>
+		<% @good_books.each do |book| %>
 				
 						<a href="/books/<%= book.id %>" class="list-group-item">
 							<%= book.title %>
