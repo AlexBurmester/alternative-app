@@ -7,27 +7,24 @@
 	<div class="col-md-8">
 
 		<h1><%= @book.title %></h1>
-		<h2><%= @book.author %></h2>
+		<h3><%= @book.author %></h3>
 		<p><%= @book.description %></p>
 
 
-		<h3>Vurdering:</h3>
 
-		<div class="col-md-2">
-			<% if @book.rating == 1 %>
-				<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
-			<% elsif @book.rating == 2 %>
-				<p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></p>
-			<% else %>
-				<p><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></p>
-			<% end %>
-		</div>
 
-		<div class="col-md-10">
-			<% unless @book.verdict.blank? %>
-			<p><%= @book.verdict %></p>
-			<% end %>
-		</div>
+			<div class="panel panel-<%= @rate %>">
+				<div class="panel-heading"><span class="glyphicon glyphicon-<%= @glyph %>" aria-hidden="true"></span>
+				<%= @recommend %>
+				</div>
+				<% unless @book.verdict.blank? %>
+		  		<div class="panel-body">
+							<p><%= @book.verdict %></p>
+		  		</div>
+		  	<% end %>
+			</div>
+
+
 
 		<% if current_user and current_user.admin? %>
 			<div class="col-md-12">

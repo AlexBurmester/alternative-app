@@ -6,6 +6,19 @@ class BooksController < ApplicationController
 	end
 
 	def show
+		if @book.rating == 2
+			@rate = "success"
+			@recommend = "Meget vigtig"
+			@glyph = "ok"
+		elsif @book.rating == 1
+			@rate = "danger"
+			@recommend = "Unødvendig"
+			@glyph = "remove"
+		else
+			@rate = "warning"
+			@recommend = "Rar at have"
+			@glyph = "minus"
+		end
 	end
 
 	def new
