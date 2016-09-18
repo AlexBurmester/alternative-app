@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 	before_action :find_book, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+	before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 	end
@@ -28,6 +28,7 @@ class BooksController < ApplicationController
 	end
 
 	def update
+
 		if @book.update(book_params)
 			redirect_to book_path(@book)
 			@book.rating = params[:rating]
@@ -51,5 +52,12 @@ class BooksController < ApplicationController
 
 		def find_book
 			@book = Book.find(params[:id])
+		end
+
+		def check_admin
+			unless current_user && current_user.admin?
+				redirect_to root_path
+				flash[:error] = "Du har ikke adgang til denne side."
+			end
 		end
 end
