@@ -29,11 +29,13 @@
 			<% end %>
 		</div>
 
-		<div class="col-md-12">
-			<%= link_to "Rediger bog", edit_book_path(@book) %>
-			</br>
-		  <%= link_to "Slet bog", book_path(@book), method: :delete, data: { confirm: "Slet bogen?"} %>
-		</div>
+		<% if current_user and current_user.admin? %>
+			<div class="col-md-12">
+				<%= link_to "Rediger bog", edit_book_path(@book) %>
+				</br>
+			  <%= link_to "Slet bog", book_path(@book), method: :delete, data: { confirm: "Slet bogen?"} %>
+			</div>
+		<% end %>
 
 	</div>
 </div>
