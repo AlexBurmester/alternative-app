@@ -17,7 +17,7 @@ class BooksController < ApplicationController
 		else
 			@rate = "warning"
 			@recommend = "Rar at have"
-			@glyph = "minus"
+			@glyph = "record"
 		end
 	end
 
