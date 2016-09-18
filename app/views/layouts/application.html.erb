@@ -37,14 +37,17 @@
 
   </nav>
 
-  <% flash.each do |name, message| %>
-    <div class="<%= name %>"><%= message %></div>
-  <% end %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+
   <div class="container">
+  
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %>"><%= message %></div>
+    <% end %>
+
     <%= yield %>
   </div>
 

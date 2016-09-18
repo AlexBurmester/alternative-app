@@ -56,8 +56,8 @@ class BooksController < ApplicationController
 
 		def check_admin
 			unless current_user && current_user.admin?
+				flash[:danger] = "Du har ikke adgang til denne side."
 				redirect_to root_path
-				flash[:error] = "Du har ikke adgang til denne side."
 			end
 		end
 end
