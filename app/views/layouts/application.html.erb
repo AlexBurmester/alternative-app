@@ -38,7 +38,11 @@
   </nav>
 
   <div class="container">
-  
+
+    <%= breadcrumbs style: :bootstrap, 
+                    separator: "", 
+                    display_single_fragment: true %>
+
     <% flash.each do |name, message| %>
       <div class="alert alert-<%= name %>"><%= message %></div>
     <% end %>

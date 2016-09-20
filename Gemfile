@@ -13,6 +13,7 @@ gem 'puma',                    '3.4.0'
 gem 'paperclip', '~> 5.1'
 gem 'devise', '~> 4.2'
 gem 'simple_form'
+gem "gretel"
 gem 'sass-rails',              '5.0.6'
 gem 'uglifier',                '3.0.0'
 gem 'coffee-rails',            '4.2.1'

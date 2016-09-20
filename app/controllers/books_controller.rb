@@ -3,6 +3,7 @@ class BooksController < ApplicationController
 	before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
+		redirect_to semesters_path
 	end
 
 	def show
