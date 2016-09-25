@@ -2,6 +2,8 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+  <meta name="description" content="<%= description(yield(:description)) %>">
+  <meta name="keywords" content="Pensum,Socialrådgiver,AAU,studie">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
