@@ -1,5 +1,5 @@
 crumb :root do
-  link "Hjem", root_path
+  link "Socialrådgiver", root_path
 end
 
 crumb :semester do |semester|
